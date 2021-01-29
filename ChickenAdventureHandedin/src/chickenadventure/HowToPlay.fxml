@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ChickenAdventure - HowToPlay.fxml
+	This is a FXML file for HowToController.java
+	Purpose: displays canvas and buttons
+	Author: Ashley Kim
+	Date: November 11th  -->
+	
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane id="howToPlay" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="956.0" prefWidth="1700.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chickenadventure.HowToController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="howToCanvas" height="956.0" width="1700.0" />
+            <Button id="startButton" layoutX="671.0" layoutY="786.0" mnemonicParsing="false" onAction="#backToMenuButtonHandler" prefHeight="84.0" prefWidth="358.0" styleClass="startButton" stylesheets="@application.css" text="BACK TO MENU" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,61 @@
+Brief explanation 
+
+
+	Bean.java
+		- The beans appear on the same x-axis (same y value), but random y-axis (random x value)
+		
+	Chicken.java & Skateboard.java
+		- The user can only move the chicken horizontally
+		
+	Rain.java
+		- Array of images are created for different shades of individual raindrops
+		- The raindrops are randomly positioned within 0 to 200 y value to avoid straight line of raindrops falling
+		
+	Seed.java
+		- Positioned at random x value, and travels straight downward
+		- Once it gets to the bottom of the game window, it is positioned at the very top (y = 0)
+		
+Codes that did not work
+
+
+GameController.java: line 107 to 110
+	- I wanted make the chicken face the way it goes, so I downloaded two images of chicken: one facing
+	the right and one facing the left -
+	(When the input array gets "RIGHT", then it displays the image of chicken facing right, vice versa)
+	It did not work, so I added an image of a skateboard so that even when the chicken moves left while facing
+	right, it would look less awkward than making it look like it's moving backwards.
+	
+application.css - line 21 to 24
+	- Since I learned how to apply fonts to string, I wanted to apply the fonts to buttons as well. I searched up 
+	how it can be done by using application.css. I wrote '@font-face' with 'font-family' and its url, and wrote the
+	font-family name for a startButton which did not work. 
+	
+New things I learned
+
+
+	- I learned how to change the scenes: I tried the method that Mr. Holik posted but it did not work. It was
+	because the controller method that I had had a gameLoop() method that is usually called in the Main class.
+	Since the Main class for javafx project that uses gameLoop() and the ones that don't use gameLoop() is 
+	different, I learned to modify the changing scene method so that it calls the gameLoop() method of its controller.
+	
+	- For all the BorderPane that are used in this game has canvases. I thought I could add a button (or any other 
+	JavaFX controls), but I couldn't. I researched, and I learned that I had to put the canvas inside 
+	AnchorPane in order to add other controls to the canvas. 
+
+Features
+
+	- The start scene displays two buttons: 'START' button and 'HOW TO PLAY' button. 'START' button allows the user
+	to start the game by changing the scene to game scene, and 'HOW TO PLAY' button changes the scene to HowToPlay scene
+	which displays the instructions to play the game.
+	- The game scene has a 'MENU' button, and 'RESTART' button. Both buttons reset the score and speed when clicked.
+	- At the end of the game, it stores the current score and compares it with the previous score to display the highscore.
+	
+Instructions
+	- The user uses RIGHT/LEFT keys to move the chicken.
+	- When it collides with raindrop, its lives decrease by 1.
+	- When it collides with a seed, its speed increases by 0.5.
+	- When it collides with a bean, its score increases by 1.
+	- The raindrops' speed increase by 0.5 after every 5 beans are collected.
+	- The number of raindrops increase by 1 after every 6 beans are collected.
+	- The goal is to collect as many beans as possible without colliding with raindrops.
+	

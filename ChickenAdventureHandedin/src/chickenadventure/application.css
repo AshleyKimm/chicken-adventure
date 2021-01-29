@@ -1,0 +1,45 @@
+/* ChickenAdventure - application.css
+ * Purpose: sets style for pane and buttons
+ * Date: November 11th, 2020
+ * Author: Ashley Kim
+ */
+
+#pane{
+    -fx-background-color: black;
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 1700 956;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+}
+#howToPane{
+    -fx-background-color: black;
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 1600 900;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+}
+@font-face {
+    font-family: pixel;
+    src: url('ARCADECLASSIC.TTF');
+}
+.startButton {
+
+    -fx-background-color: 
+        #3c7fb1,
+        linear-gradient(white, white),
+        linear-gradient(white 0%, white 49%, white 50%, white 100%);
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: black;
+    -fx-font-family: "pixel";
+    -fx-font-size: 20px;
+}
+
+#howToPlay{
+	-fx-background-color: black;
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 1600 900;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+}
