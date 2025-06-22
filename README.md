@@ -12,4 +12,9 @@ The goal is to collect as many eggs as possible before the three lives get used 
 
 https://github.com/user-attachments/assets/9e2ab1eb-6fc8-43b3-acbc-e9c7465b89f7
 
+## Tools & Frameworks
+- Eclipse IDE
+- Scene Builder
+- Java
+
 
