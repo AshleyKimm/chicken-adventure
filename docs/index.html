@@ -14,7 +14,7 @@
 </head>
 <body>
   <div id="frame">
-  <div id="stage">
+  <div id="stage" tabindex="-1">
     <canvas id="gameCanvas" width="1700" height="956"></canvas>
 
     <!-- Start.fxml -->
@@ -27,6 +27,7 @@
     <div class="scene" id="gameScene" hidden>
       <button class="startButton" style="left:1425px; top:112px; width:210px; height:64px;" id="menuButton">MENU</button>
       <button class="startButton" style="left:1425px; top:202px; width:210px; height:64px;" id="restartButton">RESTART</button>
+      <div id="focusHint" hidden>CLICK TO PLAY</div>
     </div>
 
     <!-- HowToPlay.fxml -->

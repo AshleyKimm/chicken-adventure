@@ -493,10 +493,36 @@ function showScene(name) {
 	// Each scene sets its own key handlers, like scene.setOnKeyPressed
 	window.onkeydown = null;
 	window.onkeyup = null;
-	// Move focus off the button that was clicked so the arrow keys
-	// (and Space/Enter) don't activate it during play
-	if (document.activeElement) document.activeElement.blur();
+	window.onblur = null;
+	focusGame();
 }
+
+// Gives keyboard focus to the game. This moves focus off the clicked button
+// (so Space/Enter don't press it again) while keeping it inside this page.
+// Calling blur() instead lets browsers move focus to the parent page when the
+// game is embedded in an iframe, and then the arrow keys never reach the game.
+const stageElement = document.getElementById("stage");
+
+function focusGame() {
+	stageElement.focus({ preventScroll: true });
+}
+
+// Clicking anywhere on the game focuses it again
+stageElement.addEventListener("pointerdown", (e) => {
+	if (!e.target.closest("button")) focusGame();
+});
+
+// "CLICK TO PLAY" hint, shown on the game scene while the page doesn't
+// have keyboard focus (e.g. the player clicked elsewhere on the website)
+const focusHint = document.getElementById("focusHint");
+
+function updateFocusHint() {
+	focusHint.hidden = sceneElements.game.hidden || document.hasFocus();
+}
+
+window.addEventListener("focus", updateFocusHint);
+window.addEventListener("blur", updateFocusHint);
+setInterval(updateFocusHint, 500);
 
 const background = () => getImage("images/rainyBackground1.png");
 
@@ -619,6 +645,7 @@ const GameController = {
 
 		// Browsers don't send keyup if the window loses focus mid-press
 		window.onblur = () => { input.length = 0; };
+		updateFocusHint();
 
 		// Create the raindrops; adds the starting number of raindrops to the array
 		for (let i = 0; i < Rain.numRain; i++) {
