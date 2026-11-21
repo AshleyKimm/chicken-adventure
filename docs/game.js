@@ -512,18 +512,6 @@ stageElement.addEventListener("pointerdown", (e) => {
 	if (!e.target.closest("button")) focusGame();
 });
 
-// "CLICK TO PLAY" hint, shown on the game scene while the page doesn't
-// have keyboard focus (e.g. the player clicked elsewhere on the website)
-const focusHint = document.getElementById("focusHint");
-
-function updateFocusHint() {
-	focusHint.hidden = sceneElements.game.hidden || document.hasFocus();
-}
-
-window.addEventListener("focus", updateFocusHint);
-window.addEventListener("blur", updateFocusHint);
-setInterval(updateFocusHint, 500);
-
 const background = () => getImage("images/rainyBackground1.png");
 
 // ---------------------------------------------------------------------------
@@ -645,7 +633,6 @@ const GameController = {
 
 		// Browsers don't send keyup if the window loses focus mid-press
 		window.onblur = () => { input.length = 0; };
-		updateFocusHint();
 
 		// Create the raindrops; adds the starting number of raindrops to the array
 		for (let i = 0; i < Rain.numRain; i++) {
