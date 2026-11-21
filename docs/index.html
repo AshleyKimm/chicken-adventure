@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+  ChickenAdventure (web version) - index.html
+  Replaces Start.fxml, Game.fxml and HowToPlay.fxml: one 1700x956 canvas
+  with the buttons for each scene laid over it (like the AnchorPane).
+  Author: Ashley Kim
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chicken Adventure</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="frame">
+  <div id="stage">
+    <canvas id="gameCanvas" width="1700" height="956"></canvas>
+
+    <!-- Start.fxml -->
+    <div class="scene" id="startScene">
+      <button class="startButton" style="left:627px; top:478px; width:447px; height:105px;" id="startButton">START</button>
+      <button class="startButton" style="left:649px; top:648px; width:402px; height:88px;" id="howToPlayButton">HOW TO PLAY</button>
+    </div>
+
+    <!-- Game.fxml -->
+    <div class="scene" id="gameScene" hidden>
+      <button class="startButton" style="left:1425px; top:112px; width:210px; height:64px;" id="menuButton">MENU</button>
+      <button class="startButton" style="left:1425px; top:202px; width:210px; height:64px;" id="restartButton">RESTART</button>
+    </div>
+
+    <!-- HowToPlay.fxml -->
+    <div class="scene" id="howToScene" hidden>
+      <button class="startButton" style="left:671px; top:786px; width:358px; height:84px;" id="backToMenuButton">BACK TO MENU</button>
+    </div>
+  </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

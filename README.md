@@ -18,3 +18,10 @@ https://github.com/user-attachments/assets/9e2ab1eb-6fc8-43b3-acbc-e9c7465b89f7
 
 
 
+
+## Play in the browser
+
+A web version (an HTML/JavaScript port of the JavaFX game with the same game logic) is in [`docs/`](docs/) and is published with GitHub Pages:
+https://ashleykimm.github.io/chicken-adventure/
+
+To run it locally, serve the folder (e.g. `python -m http.server` inside `docs/`) and open http://localhost:8000.

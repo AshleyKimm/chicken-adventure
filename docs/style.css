@@ -1,0 +1,75 @@
+/* ChickenAdventure (web version) - style.css
+ * Purpose: sets style for page and buttons (port of application.css)
+ * Author: Ashley Kim
+ */
+
+/* The font that application.css tried to load for the buttons */
+@font-face {
+  font-family: pixel;
+  src: url('fonts/ARCADECLASSIC.TTF') format('truetype');
+}
+
+/* No 100vh/100% height here: the page's height comes from the game
+   itself, so a page that embeds this in an iframe can size it to fit. */
+html, body {
+  margin: 0;
+  background: black;
+  overflow-x: hidden;
+}
+
+/* Holds the scaled game. game.js sets its width/height to the
+   scaled size, since a CSS transform doesn't change layout size. */
+#frame {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* The game is laid out at its original 1700x956 size,
+   and game.js scales it to fit the available width. */
+#stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1700px;
+  height: 956px;
+  transform-origin: top left;
+}
+
+#gameCanvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.scene[hidden] {
+  display: none;
+}
+
+.startButton {
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border-box;
+  background: white;
+  border: 1px solid #3c7fb1;
+  border-radius: 3px;
+  padding: 3px 30px;
+  color: black;
+  font-family: pixel, "Lucida Console", monospace;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.startButton:hover {
+  background: #e8f1f8;
+}
+
+.startButton:active {
+  background: #cfe0ee;
+}
