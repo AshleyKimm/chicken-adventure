@@ -1,3 +1,4 @@
+**Claude is only used for building the web version for demos.**
 # ChickenAdventure
 Chicken Adventure Game
 
@@ -11,7 +12,7 @@ The goal is to collect as many eggs as possible before the three lives get used 
 - Eclipse IDE
 - Scene Builder
 - Java
-- **Claude is only used for building the web version for demos.**
+
 
 ## Demo
 
